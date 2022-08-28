@@ -11,8 +11,18 @@ const fetchApi = async() => {
     let  data;
     data = await  res.json()
     const name = data.data.name
-    const price = data.data.price
-   console.log(price,name)
+
+    const price = parseFloat(data.data.price).toFixed(3)
+    const elementPrice =  document.getElementById('price')
+    elementPrice.textContent =  price
+
+    const priceBNB = parseFloat(data.data.price_BNB).toFixed(6)
+    const elementPriceBnb =  document.getElementById('price_bnb')
+    elementPriceBnb.textContent =  priceBNB
+
+
+
+
 }
 fetchApi();
 
