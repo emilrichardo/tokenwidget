@@ -1,5 +1,6 @@
 
 
+
 const element = document.getElementById("tokenwidget")
 const contractId =  element.attributes.contractid.value
 
@@ -20,19 +21,15 @@ const fetchApi = async() => {
     const elementPriceBnb =  document.getElementById('price_bnb')
     elementPriceBnb.textContent =  priceBNB
 
-
-
-
 }
 fetchApi();
 
 
 // input token adress copy
-const inputToken = document.createElement("input")
+const inputToken = document.getElementById("input_adress")
 inputToken.value = contractId
 
-const buttonClip = document.createElement("button")
-buttonClip.classList.add("btn-clipboard")
+const buttonClip = document.getElementById("btn-clipboard")
 buttonClip.textContent = "Copy"
 
 const inputGroup = document.createElement("div")
@@ -40,8 +37,8 @@ inputGroup.classList.add("inputgroup")
 
 
 //APPEND CHILD
-inputGroup.appendChild(inputToken)
-inputGroup.appendChild(buttonClip)
+
+
 element.appendChild(inputGroup)
 
 
@@ -61,3 +58,12 @@ buttonClip.addEventListener('click', function handleClick(){
         const labelCopied = document.createElement("span")
     }, 1000);
 })
+
+
+
+
+if (typeof window.ethereum !== 'undefined') {
+    console.log('MetaMask is installed!');
+} else {
+    console.log("MetaMask is not installed");
+}
