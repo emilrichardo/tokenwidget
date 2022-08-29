@@ -23,5 +23,5 @@
 
     </div>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/web3/1.5.0/web3.min.js'></script>
-    <script  src="./main.js"></script>
+    <script  src="https://dev-bitsyte.s3.us-west-2.amazonaws.com/tokenwidget/dist/dist/main-min.js"></script>
 ```

@@ -1,0 +1,30 @@
+{
+  "name": "tokenwidget",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emilrichardo/tokenwidget.git"
+  },
+  "author": "Emil",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emilrichardo/tokenwidget/issues"
+  },
+  "homepage": "https://github.com/emilrichardo/tokenwidget#readme",
+  "devDependencies": {
+    "aws-sdk": "^2.1205.0",
+    "gulp-s3-publish": "^3.0.0"
+  },
+  "dependencies": {
+    "async": "^3.2.4",
+    "dotenv": "^16.0.1",
+    "gulp": "^4.0.2",
+    "gulp-cli": "^2.3.0",
+    "gulp-minify": "^3.1.0",
+    "minimist": "^1.2.6"
+  }
+}
