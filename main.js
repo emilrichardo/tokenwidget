@@ -25,30 +25,22 @@ const fetchApi = async() => {
 }
 fetchApi();
 
-
-// input token adress copy
+//function copy to clipboard
 const inputToken = document.getElementById("input_adress")
 inputToken.value = contractId
-
 const buttonClip = document.getElementById("btn_clipboard")
 buttonClip.textContent = "Copy"
 
-
-console.log(contractId);
-
-//function copy to clipboard
-
-
-// event listener click button copy
 buttonClip.addEventListener('click', function handleClick(){
   navigator.clipboard.writeText(contractId).then(() => {
   });
-    buttonClip.textContent = "Copied";
-    setTimeout(function(){
-        buttonClip.textContent = "Copy";
 
-        const labelCopied = document.createElement("span")
-    }, 1000);
+    const copiedAlert = document.getElementById("copiedAlert")
+     copiedAlert.style.display = "block"
+
+    setTimeout(function(){
+      copiedAlert.style.display = "none"
+    }, 2000);
 })
 
 
