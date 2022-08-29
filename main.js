@@ -11,12 +11,17 @@ const fetchApi = async() => {
     data = await  res.json()
     const name = data.data.name
     tokenSymbol = data.data.symbol
-    const price = parseFloat(data.data.price).toFixed(3)
+
+
     const elementPrice =  document.getElementById('price')
-    elementPrice.textContent =  price
-    const priceBNB = parseFloat(data.data.price_BNB).toFixed(6)
+    const priceDecimals = elementPrice.attributes.decimals.value
+    const price = parseFloat(data.data.price).toFixed(priceDecimals)
     const elementPriceBnb =  document.getElementById('price_bnb')
-    elementPriceBnb.textContent =  priceBNB
+    elementPrice.textContent =  price
+    const priceDecimalsBnb = elementPriceBnb.attributes.decimals.value
+    const priceBNB = parseFloat(data.data.price_BNB).toFixed(priceDecimalsBnb)
+    elementPriceBnb.textContent =  priceBNB;
+
 }
 fetchApi();
 
@@ -29,14 +34,15 @@ const buttonClip = document.getElementById("btn_clipboard")
 buttonClip.textContent = "Copy"
 
 
+console.log(contractId);
+
 //function copy to clipboard
-function copyToClipboard() {
-    navigator.clipboard.writeText(contractId).then(() => {
-    });
-}
+
 
 // event listener click button copy
 buttonClip.addEventListener('click', function handleClick(){
+  navigator.clipboard.writeText(contractId).then(() => {
+  });
     buttonClip.textContent = "Copied";
     setTimeout(function(){
         buttonClip.textContent = "Copy";
@@ -48,7 +54,6 @@ buttonClip.addEventListener('click', function handleClick(){
 
 //Add token button
 const chainId = 56
-
 async function addTokenFunction(obj) {
      if ( typeof window.ethereum !== 'undefined'){
         const netWork = await window.ethereum.networkVersion
