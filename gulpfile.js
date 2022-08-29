@@ -38,24 +38,18 @@ aws.config.update({
 const client = new aws.S3();
 const uploadOpts = {
   bucket: process.env.S3_BUCKET,
-  uploadPath: "tokenwidget/dist",
+  uploadPath: "tokenwidget",
   putObjectParams: {
     ACL: "public-read",
   },
 };
 const cleanOpts = {
   bucket: process.env.S3_BUCKET,
-  uploadPath: "tokenwidget/dist",
+  uploadPath: "tokenwidget",
 };
 
-let paths = ["css", "css-rtl", "data", "fonts", "images", "js", "vendors"];
-let src_path = "";
 
-src_path =
-  options.path != undefined && paths.includes(options.path)
-    ? options.path + "/"
-    : "";
-src_path += "**/*";
+let src_path = "**/*";
 
 gulp.task("deploy", () => {
   return gulp.src("./dist" + src_path).pipe(upload(client, uploadOpts));

@@ -1,3 +1,11 @@
+
+
+
+
+Try this markdown:
+
+![alt text](https://dev-bitsyte.s3.us-west-2.amazonaws.com/tokenwidget/dist/images/basic-widget.png)
+
 ```
 <div id="tokenwidget"
     contractId="0x1b2f67679798c764f2c0c69dfb6bda8b30a094cf"
@@ -23,5 +31,5 @@
 
     </div>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/web3/1.5.0/web3.min.js'></script>
-    <script  src="https://dev-bitsyte.s3.us-west-2.amazonaws.com/tokenwidget/dist/dist/main-min.js"></script>
+    <script  src="https://dev-bitsyte.s3.us-west-2.amazonaws.com/tokenwidget/dist/main-min.js"></script>
 ```
