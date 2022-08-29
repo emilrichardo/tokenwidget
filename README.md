@@ -1,4 +1,4 @@
-`
+```
 <div id="tokenwidget"
     contractId="0x1b2f67679798c764f2c0c69dfb6bda8b30a094cf"
     iconTokenUrl="https://nftroyaltoken.com/static/media/logo_icon.b6e610fa.svg"
@@ -24,5 +24,4 @@
     </div>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/web3/1.5.0/web3.min.js'></script>
     <script  src="./main.js"></script>
-
-`
+```
