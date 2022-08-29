@@ -1,17 +1,26 @@
 
 
 
+
 const element = document.getElementById("tokenwidget")
 const contractId =  element.attributes.contractid.value
+let tokenSymbol;
 
+const iconTokenUrl = element.attributes.iconTokenUrl.value
 
 const apiToken = "https://api.pancakeswap.info/api/v2/tokens/" + contractId;
+
+
 
 const fetchApi = async() => {
     const res = await fetch(apiToken)
     let  data;
     data = await  res.json()
+
+
     const name = data.data.name
+    tokenSymbol = data.data.symbol
+
 
     const price = parseFloat(data.data.price).toFixed(3)
     const elementPrice =  document.getElementById('price')
@@ -29,17 +38,9 @@ fetchApi();
 const inputToken = document.getElementById("input_adress")
 inputToken.value = contractId
 
-const buttonClip = document.getElementById("btn-clipboard")
+const buttonClip = document.getElementById("btn_clipboard")
 buttonClip.textContent = "Copy"
 
-const inputGroup = document.createElement("div")
-inputGroup.classList.add("inputgroup")
-
-
-//APPEND CHILD
-
-
-element.appendChild(inputGroup)
 
 
 
@@ -60,10 +61,33 @@ buttonClip.addEventListener('click', function handleClick(){
 })
 
 
+//add token
 
 
-if (typeof window.ethereum !== 'undefined') {
-    console.log('MetaMask is installed!');
-} else {
-    console.log("MetaMask is not installed");
+
+async function addTokenFunction() {
+
+try {
+
+  const wasAdded = await ethereum.request({
+    method: 'wallet_watchAsset',
+    params: {
+      type: 'ERC20',
+      options: {
+        address: contractId,
+        symbol: tokenSymbol,
+        decimals: 18,
+        image: iconTokenUrl,
+      },
+    },
+  });
+
+  if (wasAdded) {
+    console.log('Thanks for your interest!');
+  } else {
+    console.log('HelloWorld Coin has not been added');
+  }
+} catch (error) {
+  console.log(error);
+}
 }

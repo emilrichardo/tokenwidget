@@ -8,7 +8,10 @@
 </head>
 <body>
 
-    <div id="tokenwidget" contractId="0x1b2f67679798c764f2c0c69dfb6bda8b30a094cf">
+    <div id="tokenwidget"
+    contractId="0x1b2f67679798c764f2c0c69dfb6bda8b30a094cf"
+    iconTokenUrl="https://nftroyaltoken.com/static/media/logo_icon.b6e610fa.svg"
+    >
         <span id="name"></span>
         <div class="price">
             <span>$</span>
@@ -20,11 +23,14 @@
         </div>
         <div class="inputgroup">
             <input id="input_adress" type="text"/>
-            <button id="btn-clipboard" class="btn-clipboard">Copy</button>
+            <button id="btn_clipboard" class="btn-clipboard">Copy</button>
+            <button onclick="addTokenFunction()" class="add">Add Token To MetaMask</button>
         </div>
     </div>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/web3/1.5.0/web3.min.js'></script>
 
-    <script src="./metaMask.js"></script>
-    <script src="./index.js"></script>
+    <script  src="./main.js"></script>
+
+
 </body>
 </html>
