@@ -1,8 +1,5 @@
 
-
-
-
-Try this markdown:
+Widget Token Price + Metamask button
 
 ![alt text](https://dev-bitsyte.s3.us-west-2.amazonaws.com/tokenwidget/dist/images/basic-widget.png)
 
